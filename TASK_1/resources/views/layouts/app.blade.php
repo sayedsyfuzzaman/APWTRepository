@@ -10,6 +10,7 @@
 @include('inc.topnav')
 <main>
 
+    @include('inc.heroes')
     @yield('content')
 
 </main>

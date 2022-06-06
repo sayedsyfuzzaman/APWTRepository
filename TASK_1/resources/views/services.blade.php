@@ -5,64 +5,30 @@
 @endsection
 
 @section('content')
-
-
-    <div class="container">
-
-        <!-- Header -->
-        <header class="bg-primary text-center py-5 mb-4">
-            <div class="container">
-                <h1 class="fw-light text-white">Meet the Team</h1>
-            </div>
-        </header>
-
-        <!-- Page Content -->
+    <div class="bg-light py-5">
         <div class="container">
-            <div class="row">
-                <!-- Team Member 1 -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-0">Team Member</h5>
-                            <div class="card-text text-black-50">Web Developer</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 2 -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-0">Team Member</h5>
-                            <div class="card-text text-black-50">Web Developer</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 3 -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-0">Team Member</h5>
-                            <div class="card-text text-black-50">Web Developer</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Team Member 4 -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-0 shadow">
-                        <img src="https://source.unsplash.com/7u5mwbu7qLg/500x350" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-0">Team Member</h5>
-                            <div class="card-text text-black-50">Web Developer</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name Of VAS</th>
+                    <th scope="col">Traffic</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($services as $service)
+                <tr>
+                    <th scope="row">{{$service->sl}}</th>
+                    <td>{{$service->name}}</td>
+                    <td>{{$service->traffic}}</td>
+                    <td>{{$service->source}}</td>
+                    <td>{{$service->code}}</td>
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
-        <!-- /.container -->
     </div>
 @endsection
